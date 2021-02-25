@@ -258,38 +258,23 @@ function statsPage() {
     document.querySelector(".home-main").style.display = "none";
 }
 
+const navSlide = () => {
+    const burger = document.querySelector('.nav__mobile');
+    const nav = document.querySelector('.nav__links');
+    const navLinks = document.querySelectorAll('.nav__links li');
 
+    burger.addEventListener('click', () => {
+        //Toggle Nav
+        nav.classList.toggle('nav-active');
 
-
-
-//STUFF
-
-
-const burgerMenu = document.querySelector("#hamburger-menu");
-const mobileMenu = document.querySelector("#mobile-menu");
-
-burgerMenu.addEventListener("click", toggleNavMobile);
-
-function toggleNavMobile() {
-
-    let isDisplayed = false;
-    if (mobileMenu.style.display == 'none') {
-        isDisplayed = false;
-    } else {
-        isDisplayed = true;
-    }
-
-
-    if (!isDisplayed) {
-        mobileMenu.style.display = 'flex';
-    } else {
-        mobileMenu.style.display = 'none';
-
-    }
-
-
+        //Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.8}s`;
+            }
+        });
+    });
 }
-// FROM HAMBURGER TO x
-mobileMenuClose.addEventListener("click", () => {
-    mobileMenu.style.display = "none";
-})
+navSlide();
