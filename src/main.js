@@ -16,6 +16,11 @@ const champsButton = document.getElementById("champs-button");
 const anotherChampsButton = document.getElementById("another-champs-button");
 const womenButton = document.getElementById("womenButton");
 
+const homeButtonMobile = document.getElementById("home-button-mobile");
+const champsButtonMobile = document.getElementById("champions-button-mobile");
+const statsButtonMobile = document.getElementById("stats-button-mobile");
+const mobileMenuClose = document.querySelector(".mobile-menu-close");
+
 const repeatedTeams = mapByKey(athletesData, "team");
 const repeatedSports = mapByKey(athletesData, "sport");
 const repeatedEvents = mapByKey(athletesData, "event");
@@ -31,6 +36,7 @@ const selectMale = document.getElementById("check-male");
 
 const searchBar = document.querySelector("#search-bar");
 const selectOrder = document.querySelector(".select--order");
+
 
 
 
@@ -217,6 +223,9 @@ champsButton.addEventListener("click", champsPage);
 womenButton.addEventListener("click", womenPage);
 statsButton.addEventListener("click", statsPage);
 
+homeButtonMobile.addEventListener("click", homePage)
+champsButtonMobile.addEventListener("click", champsPage);
+statsButtonMobile.addEventListener("click", statsPage);
 
 function homePage() {
     document.querySelector(".home-main").style.display = "block";
@@ -248,3 +257,39 @@ function statsPage() {
     document.querySelector(".page-search").style.display = "none";
     document.querySelector(".home-main").style.display = "none";
 }
+
+
+
+
+
+//STUFF
+
+
+const burgerMenu = document.querySelector("#hamburger-menu");
+const mobileMenu = document.querySelector("#mobile-menu");
+
+burgerMenu.addEventListener("click", toggleNavMobile);
+
+function toggleNavMobile() {
+
+    let isDisplayed = false;
+    if (mobileMenu.style.display == 'none') {
+        isDisplayed = false;
+    } else {
+        isDisplayed = true;
+    }
+
+
+    if (!isDisplayed) {
+        mobileMenu.style.display = 'flex';
+    } else {
+        mobileMenu.style.display = 'none';
+
+    }
+
+
+}
+// FROM HAMBURGER TO x
+mobileMenuClose.addEventListener("click", () => {
+    mobileMenu.style.display = "none";
+})
