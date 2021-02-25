@@ -16,11 +16,6 @@ const champsButton = document.getElementById("champs-button");
 const anotherChampsButton = document.getElementById("another-champs-button");
 const womenButton = document.getElementById("womenButton");
 
-const homeButtonMobile = document.getElementById("home-button-mobile");
-const champsButtonMobile = document.getElementById("champions-button-mobile");
-const statsButtonMobile = document.getElementById("stats-button-mobile");
-const mobileMenuClose = document.querySelector(".mobile-menu-close");
-
 const repeatedTeams = mapByKey(athletesData, "team");
 const repeatedSports = mapByKey(athletesData, "sport");
 const repeatedEvents = mapByKey(athletesData, "event");
@@ -36,7 +31,6 @@ const selectMale = document.getElementById("check-male");
 
 const searchBar = document.querySelector("#search-bar");
 const selectOrder = document.querySelector(".select--order");
-
 
 
 
@@ -223,9 +217,6 @@ champsButton.addEventListener("click", champsPage);
 womenButton.addEventListener("click", womenPage);
 statsButton.addEventListener("click", statsPage);
 
-homeButtonMobile.addEventListener("click", homePage)
-champsButtonMobile.addEventListener("click", champsPage);
-statsButtonMobile.addEventListener("click", statsPage);
 
 function homePage() {
     document.querySelector(".home-main").style.display = "block";
