@@ -95,8 +95,8 @@ nav {
         color: black;
         font-size: 25px;
     }
-    .nav__links a:hover,
-    a:active {
+    .nav__links a:hover {
+        /* a:active { */
         font-size: 165%;
         background-color: white;
         color: #2FB14E;
