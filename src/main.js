@@ -129,10 +129,11 @@ events = [...events];
 
 function listOfOptions(selectCategory, list) {
     for (let i = 0; i < list.length; i++) {
-        let option = document.createElement("option"),
-            txt = document.createTextNode(list[i]);
-        option.appendChild(txt);
+        let option = document.createElement("option"), // crea elemento 'opción'
+            txt = document.createTextNode(list[i]); // crea la lista de elementos, de acuerdo a la cantidad existente 
+        option.appendChild(txt); // se añade la lista de elementos en 'option'
         selectCategory.insertBefore(option, selectCategory.lastChild);
+        //se inserta la nueva lista de opciones en nuestra 'lista de opciones' ya existente en el html 
     }
 }
 
@@ -252,20 +253,12 @@ function statsPage() {
 const navSlide = () => {
     const burger = document.querySelector('.nav__mobile');
     const nav = document.querySelector('.nav__links');
-    const navLinks = document.querySelectorAll('.nav__links li');
+
 
     burger.addEventListener('click', () => {
         //Toggle Nav
         nav.classList.toggle('nav-active');
 
-        //Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.8}s`;
-            }
-        });
     });
 }
 navSlide();
