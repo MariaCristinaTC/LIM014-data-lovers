@@ -19,9 +19,9 @@ const womenButton = document.getElementById("womenButton");
 const repeatedTeams = mapByKey(athletesData, "team");
 const repeatedSports = mapByKey(athletesData, "sport");
 const repeatedEvents = mapByKey(athletesData, "event");
-let teams = new Set(repeatedTeams);
-let sports = new Set(repeatedSports);
-let events = new Set(repeatedEvents);
+let teams = [...new Set(repeatedTeams)];
+let sports = [...new Set(repeatedSports)];
+let events = [...new Set(repeatedEvents)];
 
 const selectTeam = document.getElementById("select-team");
 const selectSport = document.getElementById("select-sport");
@@ -123,9 +123,7 @@ selectOrder.addEventListener("change", () => {
 
 
 // Crear listas de opciones (teams y sports)
-teams = [...teams];
-sports = [...sports];
-events = [...events];
+
 
 function listOfOptions(selectCategory, list) {
     for (let i = 0; i < list.length; i++) {
