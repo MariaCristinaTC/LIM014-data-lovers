@@ -130,7 +130,7 @@ function listOfOptions(selectCategory, list) {
         let option = document.createElement("option"), // crea elemento 'opción'
             txt = document.createTextNode(list[i]); // crea la lista de elementos, de acuerdo a la cantidad existente 
         option.appendChild(txt); // se añade la lista de elementos en 'option'
-        selectCategory.insertBefore(option, selectCategory.lastChild);
+        selectCategory.appendChild(option);
         //se inserta la nueva lista de opciones en nuestra 'lista de opciones' ya existente en el html 
     }
 }
